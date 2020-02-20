@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import CardContextProvider from './contexts/CardContext';
+import TableContextProvider from './contexts/TableContext';
+import Card from './containers/Card';
+import Table from './containers/Table';
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/card/:id">
+            <CardContextProvider>
+              <Card />
+            </CardContextProvider>
+          </Route>
+          <Route path="/:page?">
+            <TableContextProvider>
+              <Table />
+            </TableContextProvider>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
