@@ -4,9 +4,9 @@ import { CardContext } from '../contexts/CardContext';
 import { loadCard } from '../actions/cardActions';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
-import CardDetails from '../components/CardDetails';
+import Card from '../components/Card';
 
-const Card = () => {
+const CardContainer = () => {
   const { card, dispatch } = useContext(CardContext);
   const { id } = useParams();
 
@@ -22,9 +22,9 @@ const Card = () => {
         Card {id}
         { loading ? <Loader /> : null }
         { error ? <ErrorMessage error={errorMessage} /> : null }
-        { details ? <CardDetails details={details} /> : null}
+        { details ? <Card details={details} /> : null}
     </div>
   );
 }
 
-export default Card;
+export default CardContainer;

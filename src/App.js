@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 import CardContextProvider from './contexts/CardContext';
 import TableContextProvider from './contexts/TableContext';
-import Card from './containers/Card';
-import Table from './containers/Table';
+import CardContainer from './containers/CardContainer';
+import TableContainer from './containers/TableContainer';
 import './App.css';
 
 
@@ -18,12 +18,12 @@ function App() {
         <Switch>
           <Route path="/card/:id">
             <CardContextProvider>
-              <Card />
+              <CardContainer />
             </CardContextProvider>
           </Route>
           <Route path="/:page?">
             <TableContextProvider>
-              <Table />
+              <TableContainer />
             </TableContextProvider>
           </Route>
         </Switch>

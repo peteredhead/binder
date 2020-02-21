@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const CardDetails = ({ details }) => {
+const Card = ({ details }) => {
   const history = useHistory();
 
   // Do nothing if details object is empty
@@ -11,7 +11,7 @@ const CardDetails = ({ details }) => {
 
   const {
     id, name, set_name, collector_number, legalities, set_type, rarity,
-    flavour_text, oracle_text, image_uris
+    flavor_text, oracle_text, image_uris
   } = details
   const { small } = image_uris;
 
@@ -28,7 +28,7 @@ const CardDetails = ({ details }) => {
         }</li>
         <li>Set type: {set_type}</li>
         <li>Rarity: {rarity}</li>
-        <li>Flavour text: {flavour_text}</li>
+        <li>Flavour text: {flavor_text}</li>
         <li>Oracle text: {oracle_text}</li>
       </ul>
       <button onClick={() => history.goBack()}>Back</button>
@@ -36,4 +36,4 @@ const CardDetails = ({ details }) => {
   )
 }
 
-export default CardDetails;
+export default Card;

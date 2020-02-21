@@ -1,0 +1,5 @@
+.loader {
+  position: fixed;
+  top: calc(50% - 2em);
+  left: calc(50% - 4em);
+}
