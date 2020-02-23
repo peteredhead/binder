@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import BSCard from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container';
@@ -66,5 +67,9 @@ const Card = ({ details }) => {
     </Container>
   )
 }
+
+Card.propTypes = {
+  details: PropTypes.object
+};
 
 export default Card;

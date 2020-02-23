@@ -4,8 +4,6 @@ import {
   CARD_ERROR
 } from '../constants/actionTypes';
 
-import { BASE_URL } from '../constants/api';
-
 import { loadCard } from './cardActions';
 
 // Test data

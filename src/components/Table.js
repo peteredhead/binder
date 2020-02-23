@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TableRow from './TableRow';
 import BSTable from 'react-bootstrap/Table';
 import './Table.css';
@@ -26,5 +27,10 @@ const Table = ({ loading, data }) => {
       </BSTable>
   );
 }
+
+Table.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.object
+};
 
 export default Table;

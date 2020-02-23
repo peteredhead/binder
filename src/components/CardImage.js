@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from 'react-bootstrap/Spinner';
 import './CardImage.css';
 
@@ -24,5 +25,9 @@ const CardImage = ({ imageUris }) => {
     </div>
   )
 }
+
+CardImage.propTypes = {
+  imageUris: PropTypes.object.isRequired
+};
 
 export default CardImage;

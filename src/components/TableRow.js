@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 const TableRow = ({ row }) => {
   const history = useHistory();
 
-  const onClick = (event) => {
+  const onClick = () => {
     history.push(`/card/${row.id}`);
   }
 
@@ -56,5 +57,9 @@ const TableRow = ({ row }) => {
     </tr>
   )
 }
+
+TableRow.propTypes = {
+  row: PropTypes.object.isRequired
+};
 
 export default TableRow;
