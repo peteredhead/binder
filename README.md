@@ -7,7 +7,7 @@
 * `cd binder`
 * `npm install`
 * `npm start`
-* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Open [http://localhost:3000/binder](http://localhost:3000/binder) to view it in the browser.
 
 ### Tests
 A few token tests are included. These can be run using the command `npm run test`
