@@ -6,7 +6,7 @@ const TableRow = ({ row }) => {
   const history = useHistory();
 
   const onClick = () => {
-    history.push(`/card/${row.id}`);
+    history.push(`/binder/card/${row.id}`);
   }
 
   const {

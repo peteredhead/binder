@@ -30,7 +30,7 @@ const Table = ({ loading, data }) => {
 
 Table.propTypes = {
   loading: PropTypes.bool.isRequired,
-  data: PropTypes.object
+  data: PropTypes.array
 };
 
 export default Table;

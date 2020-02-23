@@ -24,12 +24,12 @@ const TableContextProvider = props => {
   const history = useHistory();
   useEffect(() => {
     // Update the route when the table page changes
-    history.push(`/${table.currentPage}`);
+    history.push(`/binder/${table.currentPage}`);
     // And scroll to the top of the page
     window.scrollTo(0,0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [table.currentPage])
-  
+
   return (
     <TableContext.Provider value={{ table, dispatch }}>
       {props.children}

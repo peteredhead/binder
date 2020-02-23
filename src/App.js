@@ -18,12 +18,12 @@ function App() {
       <Container fluid>
         <ErrorBoundary>
           <Switch>
-            <Route path="/card/:id">
+            <Route path='/binder/card/:id'>
               <CardContextProvider>
                 <CardContainer />
               </CardContextProvider>
             </Route>
-            <Route path="/:page?">
+            <Route path='/binder/:page?'>
               <TableContextProvider>
                 <TableContainer />
               </TableContextProvider>
