@@ -1,0 +1,106 @@
+.Card {
+  margin-top: 1em;
+  display: flex;
+}
+
+.image, .details, .other {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1%;
+  margin-bottom: 1em;
+}
+
+.details, .other {
+  background-color: #ededed;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1023px) {
+  .image, .details, .other {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1023px) {
+  .image {
+    /* Position absolute to break item out of flexbox */
+    position: absolute;
+    width: 100%;
+    height: 500px;
+  }
+
+  .image img {
+    height: 100%;
+  }
+
+  .details, .other {
+    width: 48%;
+    margin-top: 520px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .Card {
+    flex-direction: column;
+  }
+  .image, .details, .other {
+    width: 100%;
+  }
+}
+
+.details, .other {
+  padding: 0.5em;
+}
+
+.oracle {
+  font-size: 1.2em;
+}
+
+.flavor {
+  font-style: italic;
+  font-size: 1.0em;
+}
+
+ul.legalities {
+  padding-inline-start: 0;
+  display: grid;
+  list-style: none;
+  font-size: 0.9em;
+  grid-template-columns: repeat(auto-fill, 14em);
+}
+
+.legalityItem {
+  display: block;
+  white-space: nowrap;
+}
+
+.legalityItem span {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  background-color: #aeaeae;
+  padding: 2px;
+  border-radius: 5px;
+  width: 8em;
+  text-align: center;
+  color: white;
+  margin-right: 0.5em;
+}
+
+.legalityItem span.legal {
+  background-color: #75986E;
+}
+
+.other {
+  font-size: 0.9em;
+}
+.other .label {
+  font-weight: bold;
+}
+
+.backButton {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 10em;
+}

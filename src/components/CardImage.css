@@ -1,0 +1,14 @@
+.image {
+  text-align: center;
+  position: relative;
+}
+.image img {
+  max-width: 100%;
+}
+
+.imageSpinner {
+  top: calc(50% - 1em);
+  position: absolute;
+  left: calc(50% - 1em);
+  z-index: 5;
+}

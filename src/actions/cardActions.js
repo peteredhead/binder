@@ -5,7 +5,11 @@ export const loadCard = (dispatch, id) => {
   fetch(`https://api.scryfall.com/cards/${id}`)
   .then(response => {
     if(!response.ok) {
-      throw new Error('Unable to load card details')
+      if (response.status === 404) {
+        throw new Error('Card not found');
+      } else {
+        throw new Error('Unable to load card details');
+      }
     }
     return response.json()
   })

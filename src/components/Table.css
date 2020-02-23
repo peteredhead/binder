@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1023px) {
   table, tbody, tr, td {
     display: block;
   }
@@ -6,6 +6,10 @@
   /* Hide column headings */
   thead, th {
     display: none;
+  }
+
+  table {
+    width: calc(100% - 3em) !important;
   }
 
   tr {
@@ -24,6 +28,17 @@
   td:nth-of-type(8):before { content: "Rarity: ";}
   td:nth-of-type(9):before { content: "Flavour: ";}
   td:nth-of-type(10):before { content: "Oracle: ";}
+
+  /* Center image */
+  td:nth-of-type(2) { text-align: center; }
+}
+
+.table-hover tbody td:hover {
+  cursor: pointer;
+}
+
+.pagination {
+  justify-content: center;
 }
 
 .loading {

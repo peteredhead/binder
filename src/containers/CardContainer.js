@@ -16,10 +16,8 @@ const CardContainer = () => {
   }, [dispatch, id]);
 
   const { loading, error, errorMessage, details } = card;
-
   return (
-    <div className='Card'>
-        Card {id}
+    <div>
         { loading ? <Loader /> : null }
         { error ? <ErrorMessage error={errorMessage} /> : null }
         { details ? <Card details={details} /> : null}

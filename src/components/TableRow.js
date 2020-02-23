@@ -21,7 +21,7 @@ const TableRow = ({ row }) => {
         {id}
       </td>
       <td>
-        <img src={small} alt='Card preview' style={{width:'100%'}}/>
+        <img src={small} alt='Card preview' style={{maxWidth:'100%'}}/>
       </td>
       <td>
         {name}

@@ -2,11 +2,11 @@ import React from 'react';
 import TableRow from './TableRow';
 import BSTable from 'react-bootstrap/Table';
 import './Table.css';
-const Table = ({ loading, data }) => {
 
+const Table = ({ loading, data }) => {
   return (
-      <BSTable striped bordered hover responsive>
-        <tbody className={loading ? 'loading' : null}>
+      <BSTable striped bordered hover>
+        <thead>
           <tr>
             <th>Id</th>
             <th>Image</th>
@@ -19,6 +19,8 @@ const Table = ({ loading, data }) => {
             <th>Flavour</th>
             <th>Oracle</th>
           </tr>
+        </thead>
+        <tbody className={loading ? 'loading' : null}>
           {data.map(row => <TableRow row={row} key={row.id}/>)}
         </tbody>
       </BSTable>

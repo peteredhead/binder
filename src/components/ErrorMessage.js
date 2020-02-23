@@ -1,10 +1,11 @@
 import React from 'react';
+import Alert from 'react-bootstrap/Alert'
 
 const ErrorMessage = ({ error }) => {
   return (
-    <div className='error'>
+    <Alert show variant='danger'>
       {error}
-    </div>
+    </Alert>
   )
 }
 

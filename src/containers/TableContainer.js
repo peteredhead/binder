@@ -30,42 +30,26 @@ const TableContainer = () => {
 
   const { loading, error, errorMessage, data, totalCards, currentPage } = table;
 
+  const paginaition = totalCards ? (
+    <Pagination
+        activePage={currentPage}
+        itemsCountPerPage={175}
+        totalItemsCount={totalCards}
+        pageRangeDisplayed={5}
+        onChange={handlePageChange}
+        itemClass="page-item"
+        linkClass="page-link"
+      />
+  )
+  : null
+
   return (
     <div className='Table'>
-      Table (page {page})
-      {
-        totalCards ?
-          <Pagination
-              activePage={currentPage}
-              itemsCountPerPage={175}
-              totalItemsCount={totalCards}
-              pageRangeDisplayed={5}
-              onChange={handlePageChange}
-              itemClass="page-item"
-              linkClass="page-link"
-            />
-          :null
-      }
+      { paginaition }
       { loading ? <Loader /> : null }
       { error ? <ErrorMessage error={errorMessage} /> : null }
-      {
-        totalCards ?
-          <Table loading={loading} data={data} />
-          : null
-      }
-      {
-        totalCards ?
-          <Pagination
-              activePage={currentPage}
-              itemsCountPerPage={175}
-              totalItemsCount={totalCards}
-              pageRangeDisplayed={5}
-              onChange={handlePageChange}
-              itemClass="page-item"
-              linkClass="page-link"
-            />
-          :null
-      }
+      { totalCards ? <Table loading={loading} data={data} /> : null }
+      { paginaition }
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const cardReducer = (state, action) => {
         ...state,
         loading: false,
         error: true,
-        errorMesage: action.details
+        errorMessage: action.details
       };
     default:
       return state;

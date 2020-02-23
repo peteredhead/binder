@@ -1,5 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import BSCard from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container';
+import CardImage from './CardImage';
+import './Card.css';
 
 const Card = ({ details }) => {
   const history = useHistory();
@@ -13,26 +17,53 @@ const Card = ({ details }) => {
     id, name, set_name, collector_number, legalities, set_type, rarity,
     flavor_text, oracle_text, image_uris
   } = details
-  const { small } = image_uris;
 
   return (
-    <div className='cardDetails'>
-      <h1>{name}</h1>
-      <img src={small} alt='Card preview'/>
-      <ul>
-        <li>Card id: {id}</li>
-        <li>Set name: {set_name}</li>
-        <li>Collector number {collector_number}</li>
-        <li>Legalities: {
-          Object.keys(legalities).filter(key => (legalities[key] === 'legal')).join(', ')
-        }</li>
-        <li>Set type: {set_type}</li>
-        <li>Rarity: {rarity}</li>
-        <li>Flavour text: {flavor_text}</li>
-        <li>Oracle text: {oracle_text}</li>
-      </ul>
-      <button onClick={() => history.goBack()}>Back</button>
-    </div>
+    <Container fluid>
+      <div className='Card'>
+        <CardImage imageUris={image_uris} />
+        <BSCard className='details'>
+          <h1>{name}</h1>
+          <hr />
+          <p className='oracle'>{oracle_text}</p>
+          <p className='flavor'>{flavor_text}</p>
+          <hr />
+          <ul className='legalities'>
+          {
+            Object.keys(legalities).map((key) => {
+              const legality = legalities[key];
+              const legalityText = legality.replace('_',' ');
+              return (
+                <li className='legalityItem' key={key}>
+                  <span className={legality}>{legalityText}</span>&nbsp;{key}
+                </li>
+              )
+            })
+          }
+          </ul>
+        </BSCard>
+        <BSCard className='other'>
+          <p>
+            <span className='label'>Card id:</span> {id}
+          </p>
+          <p>
+            <span className='label'>Set name:</span> {set_name}
+          </p>
+          <p>
+            <span className='label'>Collector number:</span> {collector_number}
+          </p>
+          <p>
+            <span className='label'>Set type:</span> {set_type}
+          </p>
+          <p>
+            <span className='label'>Rarity:</span> {rarity}
+          </p>
+        </BSCard>
+      </div>
+      <button className='backButton' onClick={() => history.goBack()}>
+        Back
+      </button>
+    </Container>
   )
 }
 
