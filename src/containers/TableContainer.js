@@ -6,6 +6,7 @@ import { loadTable } from '../actions/tableActions';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 import Table from '../components/Table';
+import { TABLE_SELECT_PAGE } from '../constants/actionTypes';
 
 const TableContainer = () => {
 
@@ -23,7 +24,7 @@ const TableContainer = () => {
   // Pagination click
   const handlePageChange = (page) => {
     dispatch({
-      type: 'TABLE_SELECT_PAGE',
+      type: TABLE_SELECT_PAGE,
       page: page
     })
   }

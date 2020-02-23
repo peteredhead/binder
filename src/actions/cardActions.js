@@ -1,8 +1,16 @@
+import {
+  CARD_LOADING,
+  CARD_DETAILS,
+  CARD_ERROR
+} from '../constants/actionTypes';
+
+import { BASE_URL } from '../constants/api';
+
 export const loadCard = (dispatch, id) => {
   dispatch({
-    type: 'CARD_LOADING'
+    type: CARD_LOADING
   });
-  fetch(`https://api.scryfall.com/cards/${id}`)
+  return fetch(`${BASE_URL}/cards/${id}`)
   .then(response => {
     if(!response.ok) {
       if (response.status === 404) {
@@ -15,13 +23,13 @@ export const loadCard = (dispatch, id) => {
   })
   .then(data => {
     dispatch({
-      type: 'CARD_DETAILS',
+      type: CARD_DETAILS,
       details: data
     })
   })
   .catch(error => {
     dispatch({
-      type: 'CARD_ERROR',
+      type: CARD_ERROR,
       details: error.toString()
     });
   });

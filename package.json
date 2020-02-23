@@ -35,6 +35,7 @@
     ]
   },
   "devDependencies": {
+    "jest-fetch-mock": "^3.0.1",
     "react-js-pagination": "^3.0.3"
   }
 }

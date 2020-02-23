@@ -1,8 +1,16 @@
+import {
+  TABLE_LOADING,
+  TABLE_DETAILS,
+  TABLE_ERROR,
+} from '../constants/actionTypes';
+
+import { BASE_URL } from '../constants/api';
+
 export const loadTable = (dispatch, page) => {
   dispatch({
-    type: 'TABLE_LOADING'
+    type: TABLE_LOADING
   });
-  fetch(`https://api.scryfall.com/cards?page=${page}`)
+  return fetch(`${BASE_URL}/cards?page=${page}`)
   .then(response => {
     if(!response.ok) {
       throw new Error('Unable to load table details')
@@ -11,14 +19,14 @@ export const loadTable = (dispatch, page) => {
   })
   .then(data => {
     dispatch({
-      type: 'TABLE_DETAILS',
+      type: TABLE_DETAILS,
       data: data.data,
       totalCards: data.total_cards
     })
   })
   .catch(error => {
     dispatch({
-      type: 'TABLE_ERROR',
+      type: TABLE_ERROR,
       details: error.toString()
     });
   });
