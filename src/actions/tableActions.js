@@ -10,7 +10,7 @@ export const loadTable = (dispatch, page) => {
   dispatch({
     type: TABLE_LOADING
   });
-  return fetch(`${BASE_URL}/cards?page=${page}`)
+  return fetch(`${BASE_URL}/cards/search?format=json&q=is:commander&page=${page}`)
   .then(response => {
     if(!response.ok) {
       throw new Error('Unable to load table details')

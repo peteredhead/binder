@@ -11,7 +11,7 @@ const TableRow = ({ row }) => {
 
   const {
     id, name, set_name, collector_number, legalities, set_type, rarity,
-    flavor_text, oracle_text, image_uris
+    flavor_text, oracle_text, image_uris = {}
   } = row;
 
   const { small } = image_uris;
